@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=1200"/>
+<title>Vengadasalam Mathiyazhagan — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ── RESET & BASE ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:#E8EDF4;
+  color:#141E2D;
+  line-height:1.6;
+  /* Fixed-width: everything centres at 1200px, no stretching */
+  min-width:1200px;
+}
+
+:root{
+  --navy:#0A1628;
+  --blue:#1A3F6F;
+  --accent:#2E8BC0;
+  --gold:#C8963E;
+  --light:#F2F6FB;
+  --white:#FFFFFF;
+  --gray:#7A8CA0;
+  --border:#D4DDE8;
+  --page:1200px;
+}
+
+/* ── OUTER SHELL: fixed 1200px centred page ── */
+.page{
+  width:var(--page);
+  margin:0 auto;
+  background:var(--light);
+  box-shadow:0 0 80px rgba(0,0,0,0.18);
+}
+
+/* ── NAV ── */
+nav{
+  width:100%;
+  height:58px;
+  background:rgba(10,22,40,0.97);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 52px;
+  position:sticky;
+  top:0;
+  z-index:100;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;color:white;text-decoration:none}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:12.5px;font-weight:500;letter-spacing:0.05em;transition:color 0.2s}
+.nav-links a:hover{color:white}
+.nav-cta{background:var(--accent)!important;color:white!important;padding:6px 16px;border-radius:4px}
+
+/* ── HERO ── */
+.hero{
+  width:100%;
+  height:560px;
+  background:var(--navy);
+  display:grid;
+  grid-template-columns:1fr 440px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;pointer-events:none}
+.hero-left{
+  padding:64px 48px 64px 52px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  z-index:2;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(46,139,192,0.13);border:1px solid rgba(46,139,192,0.28);
+  color:var(--accent);font-family:'Syne',sans-serif;font-size:10.5px;
+  letter-spacing:0.13em;padding:5px 13px;border-radius:20px;margin-bottom:22px;width:fit-content;
+}
+.hero-tag::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+.hero-name{font-family:'Instrument Serif',serif;font-size:52px;color:white;line-height:1.05;margin-bottom:8px}
+.hero-name em{font-style:italic;color:var(--accent)}
+.hero-role{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:20px}
+.hero-desc{font-size:14.5px;color:rgba(255,255,255,0.58);max-width:420px;line-height:1.8;margin-bottom:30px}
+.hero-stats{display:flex;gap:36px;margin-bottom:36px}
+.stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:34px;color:white;line-height:1}
+.stat-num span{color:var(--accent);font-size:19px}
+.stat-lbl{font-size:9.5px;color:var(--gray);text-transform:uppercase;letter-spacing:0.09em;margin-top:3px}
+.hero-btns{display:flex;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;border-radius:5px;font-size:12.5px;font-weight:600;text-decoration:none;transition:all 0.2s;font-family:'Syne',sans-serif;letter-spacing:0.03em}
+.btn-solid{background:var(--accent);color:white}
+.btn-solid:hover{background:#276fa0;transform:translateY(-2px);box-shadow:0 8px 24px rgba(46,139,192,0.35)}
+.btn-ghost{background:transparent;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.18)}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.5);color:white}
+/* Hero right: photo placeholder */
+.hero-right{
+  display:flex;align-items:center;justify-content:center;
+  position:relative;z-index:2;padding:40px 40px 40px 20px;
+}
+.profile-frame{
+  width:280px;height:350px;
+  position:relative;
+}
+.profile-frame::before{
+  content:'';position:absolute;
+  top:-14px;left:-14px;right:14px;bottom:14px;
+  border:1.5px solid rgba(46,139,192,0.35);border-radius:14px;z-index:0;
+}
+.profile-placeholder{
+  width:100%;height:100%;
+  background:linear-gradient(135deg,rgba(26,63,111,0.7),rgba(46,139,192,0.3));
+  border-radius:12px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;z-index:1;
+  border:2px dashed rgba(46,139,192,0.35);
+  gap:14px;
+}
+.profile-placeholder svg{opacity:0.35}
+.profile-placeholder p{font-size:11px;color:rgba(255,255,255,0.35);text-align:center;font-family:'Syne',sans-serif;letter-spacing:0.04em;line-height:1.6}
+.profile-badge{
+  position:absolute;bottom:-18px;right:-18px;z-index:3;
+  background:var(--gold);color:var(--navy);
+  font-family:'Syne',sans-serif;font-size:9.5px;font-weight:700;
+  letter-spacing:0.06em;padding:9px 14px;border-radius:6px;
+  text-align:center;line-height:1.5;
+}
+
+/* ── SECTIONS ── */
+section{padding:80px 0;width:100%}
+.container{width:100%;padding:0 52px}
+.s-label{font-family:'Syne',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.19em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.s-title{font-family:'Instrument Serif',serif;font-size:38px;color:var(--navy);line-height:1.1;margin-bottom:12px}
+.s-sub{font-size:14.5px;color:var(--gray);max-width:500px;line-height:1.75;margin-bottom:48px}
+.divider{height:1px;background:var(--border);margin:0 52px}
+
+/* ── ABOUT ── */
+#about{background:white}
+.about-grid{display:grid;grid-template-columns:1fr 380px;gap:60px;align-items:start}
+.about-text p{font-size:14.5px;color:#3A4E62;line-height:1.85;margin-bottom:16px}
+.about-text strong{color:var(--blue)}
+.chips{display:flex;flex-direction:column;gap:11px;margin-top:24px}
+.chip{display:flex;align-items:center;gap:10px;font-size:13px;color:#3C4E62}
+.chip-ico{width:32px;height:32px;background:var(--light);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.comp{background:var(--light);border:1px solid var(--border);border-radius:5px;padding:8px 11px;font-size:11px;color:var(--blue);font-weight:600;display:flex;align-items:center;gap:6px}
+.comp::before{content:'';width:4px;height:4px;background:var(--accent);border-radius:50%;flex-shrink:0}
+
+/* ── PROJECTS ── */
+#projects{background:var(--light)}
+/* MyMA featured: full-width image strip + info below */
+.myma-card{background:white;border-radius:12px;overflow:hidden;border:1px solid var(--border);margin-bottom:24px}
+.myma-badge{display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:var(--navy);font-family:'Syne',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;padding:4px 12px;border-radius:3px;text-transform:uppercase;margin-bottom:18px}
+.myma-screenshots{
+  width:100%;height:300px;
+  background:linear-gradient(145deg,#0A1628,#1A3F6F);
+  display:flex;align-items:center;justify-content:center;
+  gap:16px;padding:24px 32px;
+  overflow:hidden;
+  position:relative;
+}
+.myma-screenshots::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(10,22,40,0.5) 0%,transparent 8%,transparent 92%,rgba(10,22,40,0.5) 100%);
+  pointer-events:none;
+}
+.myma-screenshots img{
+  height:240px;
+  width:auto;
+  border-radius:10px;
+  box-shadow:0 16px 40px rgba(0,0,0,0.55);
+  flex-shrink:0;
+  object-fit:cover;
+}
+.myma-body{padding:28px 32px}
+.myma-meta{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}
+.myma-info{}
+.myma-metrics{display:flex;gap:28px;flex-shrink:0;padding:20px 24px;background:var(--light);border-radius:8px;border:1px solid var(--border);align-self:start}
+.mv{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;color:var(--navy);line-height:1}
+.mv span{font-size:14px;color:var(--accent)}
+.ml{font-size:9px;color:var(--gray);text-transform:uppercase;letter-spacing:0.07em;margin-top:2px}
+.proj-cat{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
+.proj-title{font-family:'Instrument Serif',serif;font-size:24px;color:var(--navy);margin-bottom:10px;line-height:1.2}
+.proj-desc{font-size:13.5px;color:#5A6A7C;line-height:1.72;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:0}
+.tag{background:var(--light);border:1px solid var(--border);color:var(--blue);font-size:10.5px;font-weight:600;padding:3px 9px;border-radius:3px}
+/* Two-col project cards */
+.proj-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.proj-card{background:white;border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:transform 0.22s,box-shadow 0.22s}
+.proj-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(10,22,40,0.1)}
+.proj-vis{height:220px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.proj-body{padding:24px}
+.proj-metrics{display:flex;gap:20px;padding-top:14px;border-top:1px solid var(--border);margin-top:14px}
+
+/* ── SKILLS ── */
+#skills{background:white}
+.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sk-card{background:var(--light);border:1px solid var(--border);border-radius:10px;padding:24px}
+.sk-icon{font-size:26px;margin-bottom:12px}
+.sk-title{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;color:var(--navy);margin-bottom:16px}
+.sk-row{margin-bottom:12px}
+.sk-name{font-size:12px;color:var(--navy);font-weight:500;margin-bottom:4px}
+.sk-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.sk-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--accent));border-radius:2px;width:0;transition:width 1.3s cubic-bezier(0.4,0,0.2,1)}
+.sk-card.vis .sk-fill{width:var(--w)}
+
+/* ── TIMELINE ── */
+#experience{background:var(--light)}
+.tl{padding-left:32px;position:relative}
+.tl::before{content:'';position:absolute;left:0;top:10px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent) 80%,transparent)}
+.tl-dot{position:absolute;left:-38px;top:7px;width:12px;height:12px;background:var(--accent);border-radius:50%;border:3px solid var(--light);box-shadow:0 0 0 2px var(--accent)}
+.tl-item{position:relative}
+.tl-period{font-family:'Syne',sans-serif;font-size:10px;color:var(--accent);letter-spacing:0.09em;margin-bottom:5px}
+.tl-role{font-family:'Instrument Serif',serif;font-size:26px;color:var(--navy);margin-bottom:3px}
+.tl-company{font-size:13px;color:var(--gray);margin-bottom:14px}
+.tl-pts{list-style:none;display:flex;flex-direction:column;gap:7px}
+.tl-pts li{font-size:13.5px;color:#445060;padding-left:18px;position:relative;line-height:1.65}
+.tl-pts li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:2px}
+
+/* ── CERTS ── */
+#certs{background:var(--navy)}
+#certs .s-title{color:white}
+#certs .s-label{color:var(--gold)}
+#certs .s-sub{color:rgba(255,255,255,0.42)}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cert{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:9px;padding:20px;display:flex;align-items:center;gap:14px;transition:background 0.2s}
+.cert:hover{background:rgba(255,255,255,0.09)}
+.cert-ico{width:42px;height:42px;background:rgba(46,139,192,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+.cert-name{font-weight:600;color:white;font-size:13px;margin-bottom:3px;line-height:1.3}
+.cert-src{font-size:10.5px;color:rgba(255,255,255,0.35);font-family:'Syne',sans-serif;letter-spacing:0.03em}
+
+/* ── CONTACT ── */
+#contact{background:white}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.ct-links{display:flex;flex-direction:column;gap:13px;margin-bottom:20px}
+.ct-link{display:flex;align-items:center;gap:11px;font-size:13.5px;color:var(--navy);text-decoration:none}
+.ci{width:36px;height:36px;background:var(--light);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.work-note{padding:13px 16px;background:rgba(200,150,62,0.08);border:1px solid rgba(200,150,62,0.22);border-radius:7px;font-size:12px;color:#7A5C10;display:flex;align-items:center;gap:8px}
+.lang-box{background:var(--light);border:1px solid var(--border);border-radius:12px;padding:28px}
+.lang-box h3{font-family:'Instrument Serif',serif;font-size:22px;color:var(--navy);margin-bottom:20px}
+.lang-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.lang-row:last-child{border-bottom:none}
+.ln{font-weight:600;color:var(--navy)}
+.ll{font-size:10.5px;color:var(--gray)}
+.dots{display:flex;gap:4px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--border)}
+.dot.on{background:var(--accent)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:26px 52px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05)}
+footer p{font-size:11.5px;color:rgba(255,255,255,0.25);font-family:'Syne',sans-serif}
+footer a{color:var(--accent);text-decoration:none;font-size:11.5px}
+
+/* outer bg so the centred page pops */
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">V<span>.</span>M</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <svg class="hero-bg" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="hg1" cx="75%" cy="40%"><stop offset="0%" stop-color="#2E8BC0" stop-opacity="0.22"/><stop offset="100%" stop-color="#2E8BC0" stop-opacity="0"/></radialGradient>
+      <radialGradient id="hg2" cx="10%" cy="85%"><stop offset="0%" stop-color="#C8963E" stop-opacity="0.1"/><stop offset="100%" stop-color="#C8963E" stop-opacity="0"/></radialGradient>
+    </defs>
+    <ellipse cx="900" cy="240" rx="420" ry="320" fill="url(#hg1)"/>
+    <ellipse cx="120" cy="480" rx="220" ry="160" fill="url(#hg2)"/>
+    <g stroke="rgba(46,139,192,0.07)" stroke-width="1">
+      <line x1="0" y1="140" x2="1200" y2="140"/><line x1="0" y1="280" x2="1200" y2="280"/>
+      <line x1="0" y1="420" x2="1200" y2="420"/>
+      <line x1="300" y1="0" x2="300" y2="560"/><line x1="600" y1="0" x2="600" y2="560"/>
+      <line x1="900" y1="0" x2="900" y2="560"/>
+    </g>
+  </svg>
+
+  <div class="hero-left">
+    <div class="hero-tag">Open to Senior Exec / AM Roles · Singapore</div>
+    <h1 class="hero-name">Vengadasalam<br/><em>Mathiyazhagan</em></h1>
+    <p class="hero-role">Technical Operations &amp; Security Infrastructure Executive</p>
+    <p class="hero-desc">Delivering biometric access control, smart facility infrastructure and app UI/UX design across Singapore &amp; Malaysia — serving 50,000+ residents.</p>
+    <div class="hero-stats">
+      <div><div class="stat-num">20<span>+</span></div><div class="stat-lbl">Sites Deployed</div></div>
+      <div><div class="stat-num">4<span>+</span></div><div class="stat-lbl">Yrs Experience</div></div>
+      <div><div class="stat-num">50<span>K+</span></div><div class="stat-lbl">Residents Served</div></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-solid">View Projects →</a>
+      <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="profile-frame">
+      <!-- Replace div below with <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:12px;position:relative;z-index:1"/> -->
+      <div class="profile-placeholder">
+        <svg width="56" height="56" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="24" r="14" stroke="rgba(255,255,255,0.4)" stroke-width="2"/><path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="rgba(255,255,255,0.4)" stroke-width="2"/></svg>
+        <p>Upload your photo<br/>to appear here</p>
+      </div>
+      <div class="profile-badge">Technical Ops Executive<br/>Singapore &amp; Malaysia</div>
+    </div>
+  </div>
+</div><!-- /hero -->
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="s-label">Who I Am</p>
+    <h2 class="s-title">Infrastructure specialist.<br/>Operator at scale.</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I am a <strong>Technical Operations &amp; Security Infrastructure professional</strong> with 4+ years at Centurion Corporation's Westlite Living, leading end-to-end deployment of smart systems and security infrastructure across Singapore and Malaysia.</p>
+        <p>My work spans <strong>biometric access control</strong>, turnstile systems, self-service kiosk platforms, vending infrastructure, and mobile application design — delivered across <strong>20+ dormitory sites</strong> serving more than 50,000 migrant worker residents.</p>
+        <p>I designed the <strong>MyMA App V3</strong> — a live production app on Google Play &amp; iOS with 100K+ downloads, used by foreign workers for eWallet payments, remittances, dormitory check-ins, and government service access.</p>
+        <ul class="chips">
+          <li class="chip"><div class="chip-ico">📍</div>Singapore (Requires Work Pass Sponsorship)</li>
+          <li class="chip"><div class="chip-ico">✉️</div>vsdmoon3@gmail.com</li>
+          <li class="chip"><div class="chip-ico">📞</div>+65 8504 6810</li>
+          <li class="chip"><div class="chip-ico">🌐</div>English · Tamil · Hindi</li>
+        </ul>
+      </div>
+      <div>
+        <p class="s-label" style="margin-bottom:14px">Core Competencies</p>
+        <div class="comp-grid">
+          <div class="comp">Project Management</div><div class="comp">Operations Management</div>
+          <div class="comp">Security Systems (Non-CCTV)</div><div class="comp">Access Control &amp; Biometrics</div>
+          <div class="comp">Infrastructure Deployment</div><div class="comp">System Integration</div>
+          <div class="comp">Vendor Management</div><div class="comp">SLA Monitoring</div>
+          <div class="comp">Stakeholder Management</div><div class="comp">Preventive Maintenance</div>
+          <div class="comp">IoT &amp; Smart Facilities</div><div class="comp">Digital Transformation</div>
+          <div class="comp">Multi-Site Operations</div><div class="comp">UI/UX Design (Figma)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="s-label">Portfolio</p>
+    <h2 class="s-title">Key Projects &amp; Deployments</h2>
+    <p class="s-sub">End-to-end infrastructure and design projects delivered across Singapore and Malaysia.</p>
+
+    <!-- ── MyMA FEATURED ── -->
+    <div class="myma-card">
+      <div class="myma-screenshots">
+        <!-- Real screenshots from Google Play Store -->
+        <img src="https://play-lh.googleusercontent.com/dxiGqzNL9IvGVIe8dShzqmEMz4s06uMx2e8kjdow8e4LynYUCX0l6cEEYiLn0b29jqVt=w526-h296" alt="MyMA App Screenshot 1" loading="lazy"/>
+        <img src="https://play-lh.googleusercontent.com/l-J__vYbbznusZI2sZ1T1VzvJSUx0B_Kod9ln3EitJoxXCLDGyqqsySjhOhvD_5mKIg=w526-h296" alt="MyMA App Screenshot 2" loading="lazy"/>
+        <img src="https://play-lh.googleusercontent.com/x1-_jPNYSob65Ku9QvuucI5vpCf3Sy35n0_xy9dQrC2_MoMoj1Jtbe-p5RvrkFlJ1lQ=w526-h296" alt="MyMA App Screenshot 3" loading="lazy"/>
+        <img src="https://play-lh.googleusercontent.com/P7GxemZlW7gkMwvSu9ADqQLN1H_kv2e1ltGlazCFJB2xY4cCG2RPS6fTYmOiKCsXvjY=w526-h296" alt="MyMA App Screenshot 4" loading="lazy"/>
+        <img src="https://play-lh.googleusercontent.com/MWppChIEPqaYgaVPSTm5cRZMAmKF0PJ4fRDSm1XJHxOyUs7mONJSJx7Dh0H1o1BoJGg=w526-h296" alt="MyMA App Screenshot 5" loading="lazy"/>
+        <img src="https://play-lh.googleusercontent.com/pvAEjeNk5CdTyXvTprXQHIeHCAvAQFYKjXReUzCOd0YmiWH1uZPpPyCcxWu1JkzdHBI=w526-h296" alt="MyMA App Screenshot 6" loading="lazy"/>
+      </div>
+      <div class="myma-body">
+        <div class="myma-badge">⭐ Featured — Live on Google Play &amp; iOS · 100K+ Downloads</div>
+        <div class="myma-meta">
+          <div class="myma-info">
+            <p class="proj-cat">UI/UX Design · Mobile Application · Fintech</p>
+            <h3 class="proj-title">MyMA App V3 — 1-Stop Lifestyle &amp; Financial Platform for Migrant Workers</h3>
+            <p class="proj-desc">Designed the complete V3 UI for MyMA — a live production app by WLC Facilities Services available on Google Play and iOS, serving Singapore and Malaysia migrant workers. Led the full Figma design cycle from concept through stakeholder review to developer handoff in Agile sprints.</p>
+            <p class="proj-desc"><strong>Features designed:</strong> eWallet (cashless payments, top-ups), international remittances, dormitory check-ins, SGWorkPass integration, news updates, in-app vouchers, games, and entertainment. Secured with Touch/Face ID; data encrypted in transit. Developed in partnership with Singapore Ministry of Manpower (MOM).</p>
+            <div class="tags">
+              <span class="tag">Figma</span><span class="tag">UI/UX Design</span><span class="tag">Agile</span>
+              <span class="tag">eWallet / Fintech</span><span class="tag">iOS &amp; Android</span>
+              <span class="tag">Face ID</span><span class="tag">MOM Integration</span><span class="tag">Remittance</span>
+            </div>
+          </div>
+          <div class="myma-metrics">
+            <div><div class="mv">100K<span>+</span></div><div class="ml">Downloads</div></div>
+            <div><div class="mv">V3</div><div class="ml">Designed</div></div>
+            <div><div class="mv">2</div><div class="ml">Platforms</div></div>
+            <div><div class="mv">4.5<span>★</span></div><div class="ml">Play Store</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── ACCESS CONTROL + KIOSK ── -->
+    <div class="proj-row">
+
+      <!-- ACCESS CONTROL -->
+      <div class="proj-card">
+        <div class="proj-vis" style="background:linear-gradient(145deg,#0D2137,#1F4E79)">
+          <svg viewBox="0 0 480 220" style="width:100%;height:100%" xmlns="http://www.w3.org/2000/svg">
+            <text x="240" y="22" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.2)" font-family="sans-serif">Singapore 🇸🇬 &amp; Malaysia 🇲🇾 · 20+ Sites</text>
+            <!-- Left unit: face scan -->
+            <rect x="40" y="36" width="150" height="144" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(46,139,192,0.3)" stroke-width="1"/>
+            <rect x="52" y="46" width="126" height="68" rx="6" fill="rgba(26,63,111,0.55)" stroke="rgba(46,139,192,0.25)" stroke-width="0.5"/>
+            <circle cx="115" cy="80" r="24" fill="rgba(46,139,192,0.1)" stroke="rgba(46,139,192,0.45)" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="115" y="88" text-anchor="middle" font-size="26" font-family="sans-serif">😊</text>
+            <text x="115" y="127" text-anchor="middle" font-size="8" fill="rgba(46,139,192,0.9)" font-family="sans-serif">FACE RECOGNITION</text>
+            <rect x="54" y="132" width="122" height="16" rx="4" fill="rgba(74,222,128,0.15)" stroke="rgba(74,222,128,0.3)" stroke-width="0.5"/>
+            <text x="115" y="143" text-anchor="middle" font-size="7" fill="#4ADE80" font-family="sans-serif">✓  ACCESS GRANTED</text>
+            <rect x="54" y="154" width="12" height="20" rx="2" fill="rgba(46,139,192,0.55)"/>
+            <rect x="72" y="154" width="12" height="20" rx="2" fill="rgba(46,139,192,0.55)"/>
+            <rect x="90" y="154" width="12" height="20" rx="2" fill="rgba(46,139,192,0.55)"/>
+            <rect x="108" y="154" width="12" height="20" rx="2" fill="rgba(46,139,192,0.55)"/>
+            <rect x="126" y="154" width="12" height="20" rx="2" fill="rgba(46,139,192,0.55)"/>
+            <rect x="144" y="154" width="12" height="20" rx="2" fill="rgba(46,139,192,0.55)"/>
+            <text x="115" y="190" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.22)" font-family="sans-serif">BIOMETRIC TURNSTILE</text>
+            <!-- Centre stats -->
+            <rect x="205" y="44" width="70" height="130" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(46,139,192,0.18)" stroke-width="1"/>
+            <text x="240" y="68" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.35)" font-family="sans-serif">SITES</text>
+            <text x="240" y="92" text-anchor="middle" font-size="28" fill="white" font-family="sans-serif" font-weight="bold">20+</text>
+            <line x1="215" y1="100" x2="265" y2="100" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
+            <text x="240" y="115" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.35)" font-family="sans-serif">RESIDENTS</text>
+            <text x="240" y="135" text-anchor="middle" font-size="17" fill="#3B9EE2" font-family="sans-serif" font-weight="bold">50K+</text>
+            <line x1="215" y1="143" x2="265" y2="143" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
+            <text x="240" y="156" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.35)" font-family="sans-serif">UPTIME</text>
+            <text x="240" y="172" text-anchor="middle" font-size="17" fill="#4ADE80" font-family="sans-serif" font-weight="bold">99%</text>
+            <!-- Right unit: card/NFC -->
+            <rect x="290" y="36" width="150" height="144" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(46,139,192,0.3)" stroke-width="1"/>
+            <rect x="302" y="46" width="126" height="68" rx="6" fill="rgba(26,63,111,0.55)" stroke="rgba(46,139,192,0.25)" stroke-width="0.5"/>
+            <rect x="328" y="54" width="72" height="52" rx="6" fill="rgba(46,139,192,0.12)" stroke="rgba(46,139,192,0.35)" stroke-width="1"/>
+            <text x="364" y="84" text-anchor="middle" font-size="26" font-family="sans-serif">🪪</text>
+            <text x="365" y="127" text-anchor="middle" font-size="8" fill="rgba(46,139,192,0.9)" font-family="sans-serif">NFC / CARD READER</text>
+            <rect x="304" y="132" width="122" height="16" rx="4" fill="rgba(255,165,0,0.13)" stroke="rgba(255,165,0,0.3)" stroke-width="0.5"/>
+            <text x="365" y="143" text-anchor="middle" font-size="7" fill="#FFA500" font-family="sans-serif">⏳  SCANNING...</text>
+            <rect x="304" y="154" width="12" height="20" rx="2" fill="rgba(46,139,192,0.55)"/>
+            <rect x="322" y="154" width="12" height="20" rx="2" fill="rgba(46,139,192,0.55)"/>
+            <rect x="340" y="154" width="12" height="20" rx="2" fill="rgba(46,139,192,0.55)"/>
+            <rect x="358" y="154" width="12" height="20" rx="2" fill="rgba(46,139,192,0.55)"/>
+            <rect x="376" y="154" width="12" height="20" rx="2" fill="rgba(46,139,192,0.55)"/>
+            <rect x="394" y="154" width="12" height="20" rx="2" fill="rgba(46,139,192,0.55)"/>
+            <text x="365" y="190" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.22)" font-family="sans-serif">EXIT DEVICE</text>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <p class="proj-cat">Security Infrastructure · Non-CCTV</p>
+          <h3 class="proj-title">Smart Biometric Access Control — 20+ Sites</h3>
+          <p class="proj-desc">Project managed end-to-end deployment of biometric turnstile and face recognition access control systems across 20+ dormitory locations in Singapore and Malaysia — from hardware installation and system integration through to full commissioning and SLA monitoring.</p>
+          <div class="tags">
+            <span class="tag">Biometric Systems</span><span class="tag">Turnstiles</span>
+            <span class="tag">Face Recognition</span><span class="tag">System Integration</span><span class="tag">SLA</span>
+          </div>
+          <div class="proj-metrics">
+            <div><div class="mv">20<span>+</span></div><div class="ml">Sites</div></div>
+            <div><div class="mv">2</div><div class="ml">Countries</div></div>
+            <div><div class="mv">50K<span>+</span></div><div class="ml">Residents</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KIOSK -->
+      <div class="proj-card">
+        <div class="proj-vis" style="background:linear-gradient(145deg,#0A1E35,#163A5E)">
+          <svg viewBox="0 0 480 220" style="width:100%;height:100%" xmlns="http://www.w3.org/2000/svg">
+            <text x="240" y="20" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.2)" font-family="sans-serif">10 Singapore Sites · 24/7 Cashless Service</text>
+            <!-- Kiosk -->
+            <rect x="50" y="30" width="130" height="158" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(46,139,192,0.25)" stroke-width="1"/>
+            <rect x="60" y="40" width="110" height="96" rx="5" fill="rgba(26,63,111,0.5)" stroke="rgba(46,139,192,0.2)" stroke-width="0.5"/>
+            <text x="115" y="72" text-anchor="middle" font-size="10" fill="white" font-family="sans-serif" font-weight="bold">Self-Service</text>
+            <text x="115" y="85" text-anchor="middle" font-size="10" fill="white" font-family="sans-serif" font-weight="bold">Kiosk</text>
+            <rect x="74" y="93" width="82" height="36" rx="4" fill="rgba(46,139,192,0.12)" stroke="rgba(46,139,192,0.28)" stroke-width="0.5"/>
+            <text x="115" y="116" text-anchor="middle" font-size="22" font-family="sans-serif">📱</text>
+            <text x="115" y="134" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)" font-family="sans-serif">Tap / Scan to Pay</text>
+            <rect x="74" y="142" width="82" height="8" rx="2" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+            <text x="115" y="162" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.28)" font-family="sans-serif">CARD READER</text>
+            <rect x="74" y="166" width="82" height="5" rx="1.5" fill="rgba(255,255,255,0.12)"/>
+            <text x="115" y="182" text-anchor="middle" font-size="8" fill="rgba(46,139,192,0.75)" font-family="sans-serif">● ONLINE</text>
+            <!-- Vending machine -->
+            <rect x="200" y="24" width="80" height="170" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(46,139,192,0.22)" stroke-width="1"/>
+            <rect x="208" y="32" width="64" height="112" rx="4" fill="rgba(8,20,45,0.8)" stroke="rgba(46,139,192,0.15)" stroke-width="0.5"/>
+            <rect x="212" y="36" width="18" height="18" rx="2" fill="rgba(255,165,0,0.3)"/><text x="221" y="49" text-anchor="middle" font-size="10" font-family="sans-serif">🥤</text>
+            <rect x="234" y="36" width="18" height="18" rx="2" fill="rgba(46,139,192,0.2)"/><text x="243" y="49" text-anchor="middle" font-size="10" font-family="sans-serif">🍫</text>
+            <rect x="256" y="36" width="18" height="18" rx="2" fill="rgba(100,200,100,0.2)"/><text x="265" y="49" text-anchor="middle" font-size="10" font-family="sans-serif">☕</text>
+            <rect x="212" y="58" width="18" height="18" rx="2" fill="rgba(200,100,100,0.2)"/><text x="221" y="71" text-anchor="middle" font-size="10" font-family="sans-serif">🧃</text>
+            <rect x="234" y="58" width="18" height="18" rx="2" fill="rgba(100,100,200,0.2)"/><text x="243" y="71" text-anchor="middle" font-size="10" font-family="sans-serif">📦</text>
+            <rect x="256" y="58" width="18" height="18" rx="2" fill="rgba(200,100,200,0.2)"/><text x="265" y="71" text-anchor="middle" font-size="10" font-family="sans-serif">🧴</text>
+            <rect x="212" y="80" width="18" height="18" rx="2" fill="rgba(46,139,192,0.2)"/><text x="221" y="93" text-anchor="middle" font-size="10" font-family="sans-serif">🍱</text>
+            <rect x="234" y="80" width="18" height="18" rx="2" fill="rgba(255,165,0,0.2)"/><text x="243" y="93" text-anchor="middle" font-size="10" font-family="sans-serif">🪥</text>
+            <rect x="256" y="80" width="18" height="18" rx="2" fill="rgba(255,100,100,0.2)"/><text x="265" y="93" text-anchor="middle" font-size="10" font-family="sans-serif">🌮</text>
+            <rect x="208" y="152" width="64" height="32" rx="4" fill="rgba(46,139,192,0.1)" stroke="rgba(46,139,192,0.25)" stroke-width="0.5"/>
+            <text x="240" y="164" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.45)" font-family="sans-serif">CASHLESS PAY</text>
+            <text x="240" y="177" text-anchor="middle" font-size="15" font-family="sans-serif">💳</text>
+            <!-- Stats -->
+            <rect x="302" y="36" width="118" height="148" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(46,139,192,0.18)" stroke-width="1"/>
+            <text x="361" y="60" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.35)" font-family="sans-serif">SG SITES DEPLOYED</text>
+            <text x="361" y="92" text-anchor="middle" font-size="36" fill="white" font-family="sans-serif" font-weight="bold">10</text>
+            <line x1="318" y1="102" x2="404" y2="102" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
+            <text x="361" y="120" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.35)" font-family="sans-serif">SERVICE AVAILABILITY</text>
+            <text x="361" y="150" text-anchor="middle" font-size="28" fill="#4ADE80" font-family="sans-serif" font-weight="bold">24/7</text>
+            <line x1="318" y1="158" x2="404" y2="158" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
+            <text x="361" y="172" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.25)" font-family="sans-serif">Toh Guan · Papan · Woodlands</text>
+            <text x="361" y="182" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.25)" font-family="sans-serif">Mandai · Juniper + 5 more</text>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <p class="proj-cat">Digital Transformation · Smart Infrastructure</p>
+          <h3 class="proj-title">Kiosk &amp; Vending Infrastructure — 10 Singapore Sites</h3>
+          <p class="proj-desc">Implemented self-service kiosk and vending machine platforms across 10 dormitory locations in Singapore, enabling 24/7 automated cashless service delivery and reducing manual processes for tens of thousands of migrant worker residents.</p>
+          <div class="tags">
+            <span class="tag">Kiosk Systems</span><span class="tag">Vending Machines</span>
+            <span class="tag">POS Systems</span><span class="tag">Cashless Payment</span><span class="tag">Automation</span>
+          </div>
+          <div class="proj-metrics">
+            <div><div class="mv">10</div><div class="ml">SG Sites</div></div>
+            <div><div class="mv">24/7</div><div class="ml">Availability</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /proj-row -->
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="s-label">Expertise</p>
+    <h2 class="s-title">Technical Skills &amp; Tools</h2>
+    <p class="s-sub">Hands-on expertise built across 4+ years of large-scale infrastructure deployments.</p>
+    <div class="sk-grid">
+      <div class="sk-card">
+        <div class="sk-icon">🔐</div><h3 class="sk-title">Security Systems</h3>
+        <div class="sk-row"><div class="sk-name">Access Control Systems</div><div class="sk-bar"><div class="sk-fill" style="--w:95%"></div></div></div>
+        <div class="sk-row"><div class="sk-name">Biometric / Face Recognition</div><div class="sk-bar"><div class="sk-fill" style="--w:92%"></div></div></div>
+        <div class="sk-row"><div class="sk-name">Turnstile Systems</div><div class="sk-bar"><div class="sk-fill" style="--w:95%"></div></div></div>
+        <div class="sk-row"><div class="sk-name">System Integration</div><div class="sk-bar"><div class="sk-fill" style="--w:88%"></div></div></div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-icon">🏗️</div><h3 class="sk-title">Infrastructure &amp; Ops</h3>
+        <div class="sk-row"><div class="sk-name">Hardware Installation</div><div class="sk-bar"><div class="sk-fill" style="--w:95%"></div></div></div>
+        <div class="sk-row"><div class="sk-name">Kiosk &amp; Vending Systems</div><div class="sk-bar"><div class="sk-fill" style="--w:90%"></div></div></div>
+        <div class="sk-row"><div class="sk-name">Preventive Maintenance</div><div class="sk-bar"><div class="sk-fill" style="--w:88%"></div></div></div>
+        <div class="sk-row"><div class="sk-name">SLA Monitoring</div><div class="sk-bar"><div class="sk-fill" style="--w:85%"></div></div></div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-icon">💻</div><h3 class="sk-title">Software &amp; Design</h3>
+        <div class="sk-row"><div class="sk-name">Figma (UI/UX Design)</div><div class="sk-bar"><div class="sk-fill" style="--w:85%"></div></div></div>
+        <div class="sk-row"><div class="sk-name">Microsoft Excel</div><div class="sk-bar"><div class="sk-fill" style="--w:82%"></div></div></div>
+        <div class="sk-row"><div class="sk-name">Arduino / IoT</div><div class="sk-bar"><div class="sk-fill" style="--w:75%"></div></div></div>
+        <div class="sk-row"><div class="sk-name">Jira (Basic)</div><div class="sk-bar"><div class="sk-fill" style="--w:60%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="s-label">Career</p>
+    <h2 class="s-title">Professional Experience</h2>
+    <p class="s-sub">4+ years of progressive experience in technical operations and infrastructure management.</p>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <p class="tl-period">APR 2021 – PRESENT · 4+ YEARS</p>
+        <h3 class="tl-role">Technical Operations &amp; Security Infrastructure Executive</h3>
+        <p class="tl-company">Centurion Corporation Pte Ltd — Westlite Living (WLC), Singapore</p>
+        <ul class="tl-pts">
+          <li>Project managed biometric access control &amp; turnstile deployment across 20+ sites in Singapore &amp; Malaysia</li>
+          <li>Delivered Security Systems Infrastructure (Non-CCTV) — face recognition, exit devices, integrated access solutions</li>
+          <li>Rolled out self-service kiosk &amp; vending infrastructure across 10 Singapore sites — 24/7 cashless service</li>
+          <li>Managed vendor coordination, SLA monitoring, and preventive maintenance programs</li>
+          <li>Designed MyMA App V3 in Figma — live production app with 100K+ downloads on Google Play &amp; iOS</li>
+          <li>Produced CEO-level operational and performance reports for strategic decision-making</li>
+          <li>Coordinated cross-functional teams (IT, vendors, operations) across multi-site rollouts</li>
+          <li>Conducted Arduino-based IoT R&amp;D for smart access control innovation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CERTS -->
+<section id="certs">
+  <div class="container">
+    <p class="s-label">Credentials</p>
+    <h2 class="s-title">Education &amp; Certifications</h2>
+    <p class="s-sub">Professional qualifications across operations, technology, data protection, and design.</p>
+    <div class="cert-grid">
+      <div class="cert"><div class="cert-ico">🛡️</div><div><div class="cert-name">Personal Data Protection Act (PDPA)</div><div class="cert-src">SNEF · 2024</div></div></div>
+      <div class="cert"><div class="cert-ico">☁️</div><div><div class="cert-name">AWS Cloud-Based Application Training</div><div class="cert-src">Amazon Web Services · 2024</div></div></div>
+      <div class="cert"><div class="cert-ico">💻</div><div><div class="cert-name">Diploma in Computer Science Engineering</div><div class="cert-src">Sri Adhisankarar Polytechnic, India · 2008</div></div></div>
+      <div class="cert"><div class="cert-ico">🏨</div><div><div class="cert-name">Diploma in Hospitality Management</div><div class="cert-src">TEG International College, Singapore · 2021</div></div></div>
+      <div class="cert"><div class="cert-ico">🎬</div><div><div class="cert-name">Diploma in Visual Editing</div><div class="cert-src">Alaihal Media Institute, India · 2011</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="s-label">Get In Touch</p>
+    <h2 class="s-title">Open to New Opportunities</h2>
+    <div class="ct-grid">
+      <div>
+        <p style="font-size:14.5px;color:#445060;line-height:1.8;margin-bottom:26px">Actively seeking <strong>Senior Executive or Assistant Manager</strong> roles in Technical Operations, Infrastructure Management, or Smart Systems / IoT in Singapore.</p>
+        <div class="ct-links">
+          <a href="mailto:vsdmoon3@gmail.com" class="ct-link"><div class="ci">✉️</div>vsdmoon3@gmail.com</a>
+          <a href="tel:+6585046810" class="ct-link"><div class="ci">📞</div>+65 8504 6810</a>
+          <div class="ct-link"><div class="ci">📍</div>Singapore</div>
+        </div>
+        <div class="work-note" style="margin-top:18px">⚠️ <strong>Note:</strong>&nbsp;Requires Singapore Work Pass Sponsorship</div>
+      </div>
+      <div class="lang-box">
+        <h3>Languages</h3>
+        <div class="lang-row"><span class="ln">English</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div><span class="ll">Professional</span></div>
+        <div class="lang-row"><span class="ln">Tamil</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div><span class="ll">Native</span></div>
+        <div class="lang-row"><span class="ln">Hindi</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div><span class="ll">Conversational</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Vengadasalam Mathiyazhagan · Technical Operations Portfolio</p>
+  <a href="mailto:vsdmoon3@gmail.com">vsdmoon3@gmail.com</a>
+</footer>
+
+</div><!-- /page -->
+
+<script>
+// Skill bars on scroll
+const cards = document.querySelectorAll('.sk-card');
+const ob = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); ob.unobserve(e.target); } });
+}, {threshold:0.3});
+cards.forEach(c => ob.observe(c));
+// Nav active
+const secs = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY + 70;
+  secs.forEach(s => {
+    const a = document.querySelector('nav a[href="#'+s.id+'"]');
+    if(!a) return;
+    a.style.color = (s.offsetTop <= y && s.offsetTop + s.offsetHeight > y) ? 'white' : '';
+  });
+});
+</script>
+</body>
+</html>
