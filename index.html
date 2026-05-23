@@ -2,28 +2,107 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=1200"/>
-<title>Vengadasalam Mathiyazhagan — Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mathiyazhagan Vengadasalam — Portfolio</title>
+
+<!-- SEO -->
+<meta name="description" content="Technical Operations &amp; Security Infrastructure Executive with expertise in biometric access control, smart infrastructure, kiosks, vending systems, and UI/UX design across Singapore &amp; Malaysia."/>
+<meta name="keywords" content="Technical Operations, Access Control, Biometric Systems, Infrastructure Management, Smart Systems, IoT, Singapore, Mathiyazhagan Vengadasalam"/>
+<meta name="author" content="Mathiyazhagan Vengadasalam"/>
+
+<!-- Social / LinkedIn Preview -->
+<meta property="og:title" content="Mathiyazhagan Vengadasalam — Technical Operations Portfolio"/>
+<meta property="og:description" content="Technical Operations &amp; Security Infrastructure Executive — biometric access control, smart infrastructure, UI/UX design across Singapore &amp; Malaysia."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://mathi-profile.github.io/web/"/>
+<meta property="og:image" content="https://mathi-profile.github.io/web/assets/images/profile/mathiyazhagan.jpg"/>
+<meta property="og:locale" content="en_SG"/>
+<meta property="og:site_name" content="Mathiyazhagan Vengadasalam Portfolio"/>
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Mathiyazhagan Vengadasalam — Technical Operations Portfolio"/>
+<meta name="twitter:description" content="Technical Operations &amp; Security Infrastructure Executive — biometric access control, smart infrastructure, UI/UX design across Singapore &amp; Malaysia."/>
+<meta name="twitter:image" content="https://mathi-profile.github.io/web/assets/images/profile/mathiyazhagan.jpg"/>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://mathi-profile.github.io/web/"/>
+
+<!-- Robots -->
+<meta name="robots" content="index, follow"/>
+
+<!-- JSON-LD Structured Data (Google Rich Results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mathiyazhagan Vengadasalam",
+  "alternateName": "Mathi V",
+  "jobTitle": "Technical Operations & Security Infrastructure Executive",
+  "description": "Technical Operations professional with 5+ years deploying biometric access control, smart kiosk infrastructure, and UI/UX design across 20+ sites in Singapore and Malaysia.",
+  "email": "vsdmoon3@gmail.com",
+  "telephone": "+6585046810",
+  "url": "https://mathi-profile.github.io/web/",
+  "image": "https://mathi-profile.github.io/web/assets/images/profile/mathiyazhagan.jpg",
+  "sameAs": [
+    "https://www.linkedin.com/in/mathiv26",
+    "https://mathi-profile.github.io/web/"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Singapore",
+    "addressCountry": "SG"
+  },
+  "knowsAbout": [
+    "Biometric Access Control",
+    "Security Infrastructure",
+    "Turnstile Systems",
+    "IoT Smart Facilities",
+    "UI/UX Design",
+    "Technical Operations",
+    "Kiosk Systems",
+    "Project Management"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Centurion Corporation Limited (WLC)",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Singapore",
+      "addressCountry": "SG"
+    }
+  }
+}
+</script>
+
+<!-- Font Preconnect (performance) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:#CBD5E1;color:#141E2D;min-width:1200px}
+body{font-family:'DM Sans',sans-serif;background:#CBD5E1;color:#141E2D}
 :root{--navy:#0B1E36;--blue:#1A3F6F;--accent:#2878BE;--gold:#C8963E;--teal:#0ABFBC;--light:#F1F5FA;--white:#fff;--gray:#6B7E95;--border:#D0DCE8;--page:1160px}
 
 /* ── Fixed-width page shell ── */
-.page{width:var(--page);margin:0 auto;background:var(--light);box-shadow:0 4px 60px rgba(0,0,0,0.22),0 1px 0 rgba(255,255,255,0.6)}
+.page{width:100%;max-width:1160px;margin:0 auto;background:var(--light);box-shadow:0 4px 60px rgba(0,0,0,0.22),0 1px 0 rgba(255,255,255,0.6)}
 
 /* ── NAV ── */
 nav{width:100%;height:56px;background:rgba(11,30,54,0.97);display:flex;align-items:center;justify-content:space-between;padding:0 48px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.06)}
 .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;color:#fff;text-decoration:none}.nav-logo span{color:var(--accent)}
 .nav-links{display:flex;gap:24px;list-style:none}.nav-links a{color:rgba(255,255,255,0.52);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:0.05em;transition:color 0.18s}.nav-links a:hover{color:#fff}
+.nav-links a.active{color:#fff}
 .nav-cta{background:var(--accent)!important;color:#fff!important;padding:6px 16px;border-radius:4px}
+
+/* Accessibility focus states */
+.btn:focus,.nav-links a:focus{outline:2px solid #60AEDE;outline-offset:2px}
 
 /* ── HERO ── */
 .hero{width:100%;height:540px;background:var(--navy);display:grid;grid-template-columns:1fr 400px;position:relative;overflow:hidden}
 .hero-left{padding:68px 44px 68px 48px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(40,120,190,0.14);border:1px solid rgba(40,120,190,0.28);color:#60AEDE;font-family:'Syne',sans-serif;font-size:10.5px;letter-spacing:0.14em;padding:5px 13px;border-radius:20px;margin-bottom:22px;width:fit-content}
-.hero-tag::before{content:'';width:6px;height:6px;background:#60AEDE;border-radius:50%;animation:blink 2s infinite}
+.hero-tag::before{content:'';width:6px;height:6px;background:#60AEDE;border-radius:50%;animation:blink 2s infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
 .hero-name{font-family:'Instrument Serif',serif;font-size:50px;color:#fff;line-height:1.04;margin-bottom:8px}
 .hero-name em{font-style:italic;color:#60AEDE}
@@ -33,7 +112,7 @@ nav{width:100%;height:56px;background:rgba(11,30,54,0.97);display:flex;align-ite
 .sn{font-family:'Syne',sans-serif;font-weight:800;font-size:34px;color:#fff;line-height:1}
 .sn span{color:#60AEDE;font-size:18px}
 .sl{font-size:9px;color:var(--gray);text-transform:uppercase;letter-spacing:0.1em;margin-top:3px}
-.hero-btns{display:flex;gap:11px}
+.hero-btns{display:flex;gap:11px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;border-radius:5px;font-size:12.5px;font-weight:700;text-decoration:none;transition:all 0.2s;font-family:'Syne',sans-serif;letter-spacing:0.03em}
 .btn-s{background:var(--accent);color:#fff}.btn-s:hover{background:#1f6aab;transform:translateY(-2px);box-shadow:0 8px 24px rgba(40,120,190,0.38)}
 .btn-g{background:transparent;color:rgba(255,255,255,0.72);border:1px solid rgba(255,255,255,0.2)}.btn-g:hover{border-color:rgba(255,255,255,0.5);color:#fff}
@@ -43,6 +122,38 @@ nav{width:100%;height:56px;background:rgba(11,30,54,0.97);display:flex;align-ite
 .pph{width:100%;height:100%;background:linear-gradient(135deg,rgba(26,63,111,0.72),rgba(40,120,190,0.28));border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px dashed rgba(40,120,190,0.32);gap:12px;position:relative;z-index:1}
 .pph svg{opacity:0.3}.pph p{font-size:11px;color:rgba(255,255,255,0.32);text-align:center;font-family:'Syne',sans-serif;letter-spacing:0.04em;line-height:1.6}
 .pbadge{position:absolute;bottom:-16px;right:-16px;z-index:3;background:var(--gold);color:var(--navy);font-family:'Syne',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.07em;padding:8px 13px;border-radius:5px;text-align:center;line-height:1.5}
+
+/* ── PHOTO UPLOAD ── */
+.pframe{cursor:pointer}
+.pframe:hover .pph{border-color:rgba(40,120,190,0.7);background:linear-gradient(135deg,rgba(26,63,111,0.85),rgba(40,120,190,0.45))}
+.pframe:hover .pph p{color:rgba(255,255,255,0.72)}
+.pframe:hover .pph svg{opacity:0.6}
+.photo-actual{width:100%;height:100%;object-fit:cover;border-radius:12px;position:relative;z-index:1;display:none}
+.photo-overlay{position:absolute;inset:0;background:rgba(0,0,0,0);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:4;transition:background 0.25s;gap:6px;pointer-events:none}
+.photo-overlay span{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.05em;color:transparent;transition:color 0.25s}
+.pframe:hover .photo-overlay{background:rgba(0,0,0,0.46)}
+.pframe:hover .photo-overlay span{color:#fff}
+.upload-icon{font-size:22px;opacity:0;transition:opacity 0.25s;line-height:1}
+.pframe:hover .upload-icon{opacity:1}
+.photo-saved-dot{position:absolute;top:10px;right:10px;z-index:5;width:9px;height:9px;background:#4ADE80;border-radius:50%;border:2px solid var(--navy);display:none}
+
+/* ── WHATSAPP BUTTON ── */
+.wa-btn{
+  position:fixed;bottom:28px;right:28px;
+  width:56px;height:56px;
+  background:#25D366;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,0.45),0 2px 8px rgba(0,0,0,0.18);
+  z-index:999;text-decoration:none;
+  transition:transform 0.22s,box-shadow 0.22s;
+  animation:wa-pop 0.5s cubic-bezier(0.34,1.56,0.64,1) 1.2s both;
+}
+.wa-btn:hover{transform:scale(1.12);box-shadow:0 8px 32px rgba(37,211,102,0.55),0 2px 8px rgba(0,0,0,0.2)}
+.wa-btn svg{width:28px;height:28px;fill:#fff}
+.wa-tooltip{position:absolute;right:68px;background:#1a1a1a;color:#fff;font-family:'Syne',sans-serif;font-size:10.5px;font-weight:600;padding:6px 12px;border-radius:6px;white-space:nowrap;opacity:0;transform:translateX(6px);transition:all 0.2s;pointer-events:none}
+.wa-tooltip::after{content:'';position:absolute;right:-5px;top:50%;transform:translateY(-50%);border:5px solid transparent;border-left-color:#1a1a1a;border-right:none}
+.wa-btn:hover .wa-tooltip{opacity:1;transform:translateX(0)}
+@keyframes wa-pop{from{opacity:0;transform:scale(0.5)}to{opacity:1;transform:scale(1)}}
 
 /* ── SECTIONS ── */
 section{padding:72px 0;width:100%}
@@ -69,28 +180,15 @@ section{padding:72px 0;width:100%}
 /* MyMA featured card */
 .myma{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);margin-bottom:22px;box-shadow:0 2px 16px rgba(11,30,54,0.06)}
 .myma-badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--navy);font-family:'Syne',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;padding:4px 11px;border-radius:3px;text-transform:uppercase;margin-bottom:14px}
-.ss-strip{
-  width:100%;height:280px;
-  background:linear-gradient(145deg,#07111f,#122644);
-  display:flex;align-items:center;gap:14px;
-  padding:20px 28px;overflow:hidden;
-  position:relative;
-}
-.ss-strip::before,.ss-strip::after{
-  content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;
-}
+.ss-strip{width:100%;height:280px;background:linear-gradient(145deg,#07111f,#122644);display:flex;align-items:center;gap:14px;padding:20px 28px;overflow:hidden;position:relative}
+.ss-strip::before,.ss-strip::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
 .ss-strip::before{left:0;background:linear-gradient(to right,#07111f,transparent)}
 .ss-strip::after{right:0;background:linear-gradient(to left,#07111f,transparent)}
-.ss-strip img{
-  height:234px;width:auto;border-radius:9px;flex-shrink:0;
-  box-shadow:0 12px 36px rgba(0,0,0,0.55);
-  object-fit:cover;
-  transition:transform 0.3s;
-}
+.ss-strip img{height:234px;width:auto;border-radius:9px;flex-shrink:0;box-shadow:0 12px 36px rgba(0,0,0,0.55);object-fit:cover;transition:transform 0.3s}
 .ss-strip img:hover{transform:scale(1.04)}
 .myma-body{padding:26px 30px}
 .myma-inner{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start}
-.myma-metrics{display:flex;gap:22px;padding:18px 22px;background:var(--light);border-radius:8px;border:1px solid var(--border);flex-shrink:0;align-self:start}
+.myma-metrics{display:flex;gap:22px;padding:18px 22px;background:var(--light);border-radius:8px;border:1px solid var(--border);flex-shrink:0;align-self:start;flex-wrap:wrap}
 .mv{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--navy);line-height:1}
 .mv span{font-size:13px;color:var(--accent)}
 .ml{font-size:8.5px;color:var(--gray);text-transform:uppercase;letter-spacing:0.07em;margin-top:2px}
@@ -138,16 +236,12 @@ section{padding:72px 0;width:100%}
 #certs .stitle{color:#fff}
 #certs .slabel{color:var(--gold)}
 #certs .ssub{color:rgba(255,255,255,0.4)}
-
-/* Two-panel layout: education left, certs right */
 .edu-cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-.edu-panel{}
 .edu-entry{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.08)}
 .edu-entry:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
 .edu-rank{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
 .edu-title{font-weight:600;color:#fff;font-size:13.5px;margin-bottom:3px;line-height:1.3}
 .edu-inst{font-size:11px;color:rgba(255,255,255,0.38);font-family:'Syne',sans-serif;letter-spacing:0.03em}
-.cert-panel{}
 .cert{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:9px;padding:18px 20px;display:flex;align-items:center;gap:13px;transition:background 0.2s;margin-bottom:12px}
 .cert:last-child{margin-bottom:0}
 .cert:hover{background:rgba(255,255,255,0.09)}
@@ -159,7 +253,8 @@ section{padding:72px 0;width:100%}
 #contact{background:#fff}
 .ctgrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .ctlinks{display:flex;flex-direction:column;gap:12px;margin-bottom:18px}
-.ctlink{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--navy);text-decoration:none}
+.ctlink{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--navy);text-decoration:none;transition:color 0.18s}
+.ctlink:hover{color:var(--accent)}
 .ci{width:34px;height:34px;background:var(--light);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
 .wnote{padding:12px 15px;background:rgba(200,150,62,0.08);border:1px solid rgba(200,150,62,0.22);border-radius:7px;font-size:11.5px;color:#7A5C10;display:flex;align-items:center;gap:8px}
 .langbox{background:var(--light);border:1px solid var(--border);border-radius:11px;padding:26px}
@@ -171,9 +266,41 @@ section{padding:72px 0;width:100%}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--border)}.dot.on{background:var(--accent)}
 
 /* ── FOOTER ── */
-footer{background:var(--navy);padding:24px 48px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05)}
+footer{background:var(--navy);padding:24px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,0.05)}
 footer p{font-size:11px;color:rgba(255,255,255,0.22);font-family:'Syne',sans-serif}
 footer a{color:var(--accent);text-decoration:none;font-size:11px}
+
+/* ── RESPONSIVE ── */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;height:auto}
+  .hero-left{padding:48px 24px 32px}
+  .hero-right{padding:0 24px 48px;justify-content:flex-start}
+  .about-grid{grid-template-columns:1fr;gap:32px}
+  .prow{grid-template-columns:1fr}
+  .skgrid{grid-template-columns:1fr}
+  .ctgrid{grid-template-columns:1fr;gap:36px}
+  .edu-cert-grid{grid-template-columns:1fr;gap:32px}
+  .myma-inner{grid-template-columns:1fr}
+  .myma-metrics{align-self:auto}
+  .container{padding:0 24px}
+  .hr{margin:0 24px}
+  nav{padding:0 24px}
+  .nav-links{display:none}
+  .hero-stats{flex-wrap:wrap;gap:20px}
+  footer{padding:20px 24px}
+  .pframe{width:200px;height:260px}
+}
+
+@media (max-width:600px){
+  .hero-name{font-size:36px}
+  .stitle{font-size:28px}
+  .hero-btns{gap:8px}
+  .btn{padding:10px 16px;font-size:11.5px}
+  .sn{font-size:26px}
+  .ss-strip{height:200px}
+  .ss-strip img{height:170px}
+  section{padding:52px 0}
+}
 </style>
 </head>
 <body>
@@ -181,7 +308,7 @@ footer a{color:var(--accent);text-decoration:none;font-size:11px}
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">V<span>.</span>M</a>
+  <a href="#" class="nav-logo">M<span>.</span>V</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -209,7 +336,7 @@ footer a{color:var(--accent);text-decoration:none;font-size:11px}
 
   <div class="hero-left">
     <div class="hero-tag">Open to Senior Exec / AM Roles · Singapore</div>
-    <h1 class="hero-name">Vengadasalam<br/><em>Mathiyazhagan</em></h1>
+    <h1 class="hero-name">Mathiyazhagan<br/><em>Vengadasalam</em></h1>
     <p class="hero-role">Technical Operations &amp; Security Infrastructure Executive</p>
     <p class="hero-desc">Delivering biometric access control, smart facility infrastructure and app UI/UX design across Singapore &amp; Malaysia — serving 50,000+ residents across 20+ sites.</p>
     <div class="hero-stats">
@@ -219,18 +346,31 @@ footer a{color:var(--accent);text-decoration:none;font-size:11px}
     </div>
     <div class="hero-btns">
       <a href="#projects" class="btn btn-s">View Projects →</a>
-      <a href="#contact" class="btn btn-g">Get In Touch</a>
+      <a href="https://www.linkedin.com/in/mathiv26" class="btn btn-g" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a href="https://mathi-profile.github.io/web/" class="btn btn-g" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href="resume.pdf" download class="btn btn-g">⬇ Resume</a>
     </div>
   </div>
   <div class="hero-right">
-    <div class="pframe">
-      <!-- REPLACE with: <img src="photo.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:12px;position:relative;z-index:1"/> -->
-      <div class="pph">
+    <div class="pframe" id="photoFrame" title="Click to upload your photo">
+      <!-- Actual photo (shown after upload) -->
+      <img id="photoActual" class="photo-actual" alt="Mathiyazhagan Vengadasalam"/>
+      <!-- Placeholder (shown before upload) -->
+      <div class="pph" id="photoPh">
         <svg width="52" height="52" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="24" r="13" stroke="rgba(255,255,255,0.4)" stroke-width="2"/><path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="rgba(255,255,255,0.4)" stroke-width="2"/></svg>
-        <p>Upload your photo<br/>to appear here</p>
+        <p>Click to upload<br/>your photo</p>
       </div>
+      <!-- Hover overlay (change photo prompt) -->
+      <div class="photo-overlay">
+        <div class="upload-icon">📷</div>
+        <span id="overlayLabel">Upload Photo</span>
+      </div>
+      <!-- Green dot: shows when photo is saved -->
+      <div class="photo-saved-dot" id="savedDot" title="Photo saved locally"></div>
       <div class="pbadge">Technical Ops Executive<br/>Singapore &amp; Malaysia</div>
     </div>
+    <!-- Hidden file input -->
+    <input type="file" id="photoInput" accept="image/*" style="display:none"/>
   </div>
 </div>
 
@@ -325,12 +465,9 @@ footer a{color:var(--accent);text-decoration:none;font-size:11px}
             <text x="110" y="120" text-anchor="middle" font-size="7.5" fill="rgba(40,120,190,0.88)" font-family="sans-serif">FACE RECOGNITION</text>
             <rect x="50" y="126" width="120" height="15" rx="4" fill="rgba(74,222,128,0.14)" stroke="rgba(74,222,128,0.28)" stroke-width="0.5"/>
             <text x="110" y="137" text-anchor="middle" font-size="6.5" fill="#4ADE80" font-family="sans-serif">✓  ACCESS GRANTED</text>
-            <rect x="50" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
-            <rect x="67" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
-            <rect x="84" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
-            <rect x="101" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
-            <rect x="118" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
-            <rect x="135" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
+            <rect x="50" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/><rect x="67" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
+            <rect x="84" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/><rect x="101" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
+            <rect x="118" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/><rect x="135" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
             <text x="110" y="183" text-anchor="middle" font-size="6" fill="rgba(255,255,255,0.2)" font-family="sans-serif">BIOMETRIC TURNSTILE</text>
             <rect x="196" y="38" width="68" height="128" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(40,120,190,0.17)" stroke-width="1"/>
             <text x="230" y="60" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.32)" font-family="sans-serif">SITES</text>
@@ -348,12 +485,9 @@ footer a{color:var(--accent);text-decoration:none;font-size:11px}
             <text x="350" y="120" text-anchor="middle" font-size="7.5" fill="rgba(40,120,190,0.88)" font-family="sans-serif">NFC / CARD READER</text>
             <rect x="290" y="126" width="120" height="15" rx="4" fill="rgba(255,165,0,0.12)" stroke="rgba(255,165,0,0.28)" stroke-width="0.5"/>
             <text x="350" y="137" text-anchor="middle" font-size="6.5" fill="#FFA500" font-family="sans-serif">⏳  SCANNING...</text>
-            <rect x="290" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
-            <rect x="307" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
-            <rect x="324" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
-            <rect x="341" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
-            <rect x="358" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
-            <rect x="375" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
+            <rect x="290" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/><rect x="307" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
+            <rect x="324" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/><rect x="341" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
+            <rect x="358" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/><rect x="375" y="148" width="11" height="18" rx="2" fill="rgba(40,120,190,0.55)"/>
             <text x="350" y="183" text-anchor="middle" font-size="6" fill="rgba(255,255,255,0.2)" font-family="sans-serif">EXIT DEVICE</text>
           </svg>
         </div>
@@ -385,7 +519,6 @@ footer a{color:var(--accent);text-decoration:none;font-size:11px}
             <text x="109" y="160" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.28)" font-family="sans-serif">CARD READER</text>
             <rect x="68" y="165" width="82" height="5" rx="1.5" fill="rgba(255,255,255,0.11)"/>
             <text x="109" y="179" text-anchor="middle" font-size="7.5" fill="rgba(40,120,190,0.75)" font-family="sans-serif">● ONLINE</text>
-            <!-- Vending machine -->
             <rect x="192" y="22" width="78" height="168" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(40,120,190,0.22)" stroke-width="1"/>
             <rect x="200" y="30" width="62" height="114" rx="4" fill="rgba(6,16,38,0.8)" stroke="rgba(40,120,190,0.14)" stroke-width="0.5"/>
             <rect x="204" y="34" width="18" height="18" rx="2" fill="rgba(255,165,0,0.28)"/><text x="213" y="47" text-anchor="middle" font-size="10" font-family="sans-serif">🥤</text>
@@ -400,7 +533,6 @@ footer a{color:var(--accent);text-decoration:none;font-size:11px}
             <rect x="200" y="152" width="62" height="30" rx="4" fill="rgba(40,120,190,0.1)" stroke="rgba(40,120,190,0.24)" stroke-width="0.5"/>
             <text x="231" y="163" text-anchor="middle" font-size="6.5" fill="rgba(255,255,255,0.42)" font-family="sans-serif">CASHLESS PAY</text>
             <text x="231" y="175" text-anchor="middle" font-size="14" font-family="sans-serif">💳</text>
-            <!-- Stats -->
             <rect x="288" y="34" width="124" height="148" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(40,120,190,0.17)" stroke-width="1"/>
             <text x="350" y="56" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.32)" font-family="sans-serif">SG SITES</text>
             <text x="350" y="88" text-anchor="middle" font-size="36" fill="white" font-family="sans-serif" font-weight="bold">10</text>
@@ -490,7 +622,7 @@ footer a{color:var(--accent);text-decoration:none;font-size:11px}
 
 <div class="hr"></div>
 
-<!-- EDUCATION & CERTS — dark section -->
+<!-- EDUCATION & CERTS -->
 <section id="certs">
   <div class="container">
     <p class="slabel">Credentials</p>
@@ -498,22 +630,18 @@ footer a{color:var(--accent);text-decoration:none;font-size:11px}
     <p class="ssub">Qualifications prioritised by relevance to Technical Operations and Infrastructure roles.</p>
     <div class="edu-cert-grid">
 
-      <!-- Education: ordered by job relevance -->
       <div class="edu-panel">
         <p class="slabel" style="margin-bottom:20px;color:rgba(255,255,255,0.5)">Education</p>
-
         <div class="edu-entry">
           <div class="edu-rank">① Most Relevant — Technical Foundation</div>
           <div class="edu-title">Diploma in Computer Science Engineering</div>
           <div class="edu-inst">Sri Adhisankarar Polytechnic College, India · 2008</div>
         </div>
-
         <div class="edu-entry">
           <div class="edu-rank">② Supports UI/UX &amp; App Design Work</div>
           <div class="edu-title">Diploma in Visual Editing</div>
           <div class="edu-inst">Alaihal Media Institute, Tiruchirappalli, India · 2011</div>
         </div>
-
         <div class="edu-entry">
           <div class="edu-rank">③ Singapore Institution — Local Footprint</div>
           <div class="edu-title">Diploma in International Hospitality Management</div>
@@ -521,12 +649,10 @@ footer a{color:var(--accent);text-decoration:none;font-size:11px}
         </div>
       </div>
 
-      <!-- Certifications -->
       <div class="cert-panel">
         <p class="slabel" style="margin-bottom:20px;color:rgba(255,255,255,0.5)">Certifications</p>
         <div class="cert"><div class="certco">🛡️</div><div><div class="certn">Personal Data Protection Act (PDPA)</div><div class="certs">SNEF · 2024</div></div></div>
         <div class="cert"><div class="certco">☁️</div><div><div class="certn">AWS Cloud-Based Application Training</div><div class="certs">Amazon Web Services · 2024</div></div></div>
-	<div class> </div>
       </div>
     </div>
   </div>
@@ -545,6 +671,8 @@ footer a{color:var(--accent);text-decoration:none;font-size:11px}
         <div class="ctlinks">
           <a href="mailto:vsdmoon3@gmail.com" class="ctlink"><div class="ci">✉️</div>vsdmoon3@gmail.com</a>
           <a href="tel:+6585046810" class="ctlink"><div class="ci">📞</div>+65 8504 6810</a>
+          <a href="https://www.linkedin.com/in/mathiv26" class="ctlink" target="_blank" rel="noopener noreferrer"><div class="ci">💼</div>linkedin.com/in/mathiv26</a>
+          <a href="https://mathi-profile.github.io/web/" class="ctlink" target="_blank" rel="noopener noreferrer"><div class="ci">🔗</div>mathi-profile.github.io/web</a>
           <div class="ctlink"><div class="ci">📍</div>Singapore</div>
         </div>
         <div class="wnote">⚠️ <strong>Note:</strong>&nbsp;Requires Singapore Work Pass Sponsorship</div>
@@ -560,17 +688,83 @@ footer a{color:var(--accent);text-decoration:none;font-size:11px}
 </section>
 
 <footer>
-  <p>© 2025 Vengadasalam Mathiyazhagan · Technical Operations Portfolio</p>
+  <p>© <span id="year"></span> Mathiyazhagan Vengadasalam · Technical Operations Portfolio</p>
   <a href="mailto:vsdmoon3@gmail.com">vsdmoon3@gmail.com</a>
 </footer>
 
 </div><!-- /page -->
+
+<!-- ── WHATSAPP FLOATING BUTTON ── -->
+<a href="https://wa.me/6585046810?text=Hi%20Mathiyazhagan%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect." 
+   class="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <div class="wa-tooltip">Chat on WhatsApp</div>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
 <script>
+/* ── Dynamic year ── */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ── Skill bar animation on scroll ── */
 const cards = document.querySelectorAll('.skcard');
-const ob = new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');ob.unobserve(x.target)}})},{threshold:0.3});
-cards.forEach(c=>ob.observe(c));
-const secs=document.querySelectorAll('section[id]');
-window.addEventListener('scroll',()=>{const y=window.scrollY+68;secs.forEach(s=>{const a=document.querySelector('nav a[href="#'+s.id+'"]');if(!a)return;a.style.color=(s.offsetTop<=y&&s.offsetTop+s.offsetHeight>y)?'#fff':''})});
+const ob = new IntersectionObserver(e => {
+  e.forEach(x => {
+    if (x.isIntersecting) { x.target.classList.add('vis'); ob.unobserve(x.target); }
+  });
+}, { threshold: 0.3 });
+cards.forEach(c => ob.observe(c));
+
+/* ── Active nav highlight ── */
+const secs = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY + 68;
+  secs.forEach(s => {
+    const a = document.querySelector('nav a[href="#' + s.id + '"]');
+    if (!a) return;
+    a.classList.toggle('active', s.offsetTop <= y && s.offsetTop + s.offsetHeight > y);
+  });
+});
+
+/* ── Photo Upload System ── */
+const photoFrame   = document.getElementById('photoFrame');
+const photoInput   = document.getElementById('photoInput');
+const photoActual  = document.getElementById('photoActual');
+const photoPh      = document.getElementById('photoPh');
+const overlayLabel = document.getElementById('overlayLabel');
+const savedDot     = document.getElementById('savedDot');
+const PHOTO_KEY    = 'mv_portfolio_photo';
+
+function applyPhoto(dataUrl) {
+  photoActual.src = dataUrl;
+  photoActual.style.display = 'block';
+  photoPh.style.display = 'none';
+  overlayLabel.textContent = 'Change Photo';
+  savedDot.style.display = 'block';
+}
+
+// Restore saved photo on load
+try {
+  const saved = localStorage.getItem(PHOTO_KEY);
+  if (saved) applyPhoto(saved);
+} catch(e) {}
+
+// Click frame → open file picker
+photoFrame.addEventListener('click', () => photoInput.click());
+
+// Handle file selection
+photoInput.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    const dataUrl = ev.target.result;
+    try { localStorage.setItem(PHOTO_KEY, dataUrl); } catch(e) {}
+    applyPhoto(dataUrl);
+  };
+  reader.readAsDataURL(file);
+});
 </script>
 </body>
 </html>
